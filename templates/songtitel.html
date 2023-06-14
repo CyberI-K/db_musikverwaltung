@@ -1,0 +1,30 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Songs</title>
+</head>
+<body>
+   <h1>Alle Songs</h1>
+    <form method="POST" action="/songs">
+        <input type="text" name="search" placeholder="Songs suche">
+        <button type="submit">Suchen</button>
+    </form>
+    <ul>
+        {% for song in songs %}
+        <li>vom Album: {{ song[4]}}
+
+            <ul>
+                {% for i in songs %}
+                    <li>{{ i[2] }} </li>
+                {% endfor %}
+            </ul>
+
+        </li>
+
+        {% endfor %}
+    </ul>
+</body>
+</html>
